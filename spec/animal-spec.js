@@ -12,6 +12,7 @@ describe('Animal', function(){
     newAnimal.hunger.currentLevel = 50
     newAnimal.activity.currentLevel = 50
     newAnimal.sleepiness.currentLevel = 50
+    newAnimal.dead = false;
   });
 
   it('should have a food level of 70 after a regularIncrease and 30 seconds', function(){
@@ -64,6 +65,26 @@ describe('Animal', function(){
     newAnimal.regularIncrease(newAnimal.hunger)
     jasmine.clock().tick(30001);
     expect(newAnimal.dead).toEqual(true);
+  })
+
+  it('should check for not dead when hunger level is below 100', function() {
+    newAnimal.regularIncrease(newAnimal.hunger)
+    jasmine.clock().tick(30001);
+    expect(newAnimal.dead).toEqual(false);
+  })
+
+  it('should check for dead after the animals hunger level goes  below 0', function() {
+    newAnimal.hunger.currentLevel = 10;
+    newAnimal.regularDecrease(newAnimal.hunger)
+    jasmine.clock().tick(30001);
+    expect(newAnimal.dead).toEqual(true);
+  })
+
+  it('should check for not dead when the animals hunger level stays above 0', function() {
+    newAnimal.hunger.currentLevel = 25;
+    newAnimal.regularDecrease(newAnimal.hunger)
+    jasmine.clock().tick(30001);
+    expect(newAnimal.dead).toEqual(false);
   })
 
 });

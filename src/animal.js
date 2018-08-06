@@ -15,26 +15,11 @@ export function Animal(name, type){
   this.dead = false;
 }
 
-// Animal.prototype.needsIncrease = function(incrementBoost) {
-//   let that = this
-//   return function(property){
-//     setInterval(function() {
-//       property.currentLevel += property.increment + incrementBoost;
-//       if (that.checkForDead(property)) {
-//         console.log("reached if");
-//         that.dead = true;
-//       }
-//     }, property.interval);
-//   }
-// }
-
 Animal.prototype.needsIncrease = function(incrementBoost) {
-  // console.log(this);
   return (property) => {
     setInterval(() =>{
       property.currentLevel += property.increment + incrementBoost;
       if (this.checkForDead(property)) {
-        console.log("reached if");
         this.dead = true;
       }
     }, property.interval);
@@ -42,14 +27,15 @@ Animal.prototype.needsIncrease = function(incrementBoost) {
 }
 
 Animal.prototype.needsSatisfied = function(decrementBoost) {
-  return function(property){
+  return (property)=> {
     property.currentLevel -= property.increment + decrementBoost;
+    if (this.checkForDead(property)) {
+      this.dead = true;
+    }
   }
 }
 
 Animal.prototype.checkForDead = function(property) {
-  console.log("reached");
-  console.log(property.currentLevel);
   if (property.currentLevel > 100 || property.currentLevel < 0) {
     return true;
   } else {
