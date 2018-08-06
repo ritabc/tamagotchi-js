@@ -61,7 +61,9 @@ describe('Animal', function(){
 
   it('should check for dead after the animals hunger level goes above 100', function() {
     newAnimal.hunger.currentLevel = 95;
-    expect(newAnimal.regularIncrease(newAnimal.hunger)).toEqual("You lost :-(");
+    newAnimal.regularIncrease(newAnimal.hunger)
+    jasmine.clock().tick(30001);
+    expect(newAnimal.dead).toEqual(true);
   })
 
 });

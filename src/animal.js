@@ -12,14 +12,30 @@ export function Animal(name, type){
   this.fastDecrease = this.needsSatisfied(10);
   this.regularDecrease = this.needsSatisfied(0);
   this.slowDecrease = this.needsSatisfied(-10);
+  this.dead = false;
 }
 
+// Animal.prototype.needsIncrease = function(incrementBoost) {
+//   let that = this
+//   return function(property){
+//     setInterval(function() {
+//       property.currentLevel += property.increment + incrementBoost;
+//       if (that.checkForDead(property)) {
+//         console.log("reached if");
+//         that.dead = true;
+//       }
+//     }, property.interval);
+//   }
+// }
+
 Animal.prototype.needsIncrease = function(incrementBoost) {
-  return function(property){
-    setInterval(() => {
+  // console.log(this);
+  return (property) => {
+    setInterval(() =>{
       property.currentLevel += property.increment + incrementBoost;
-      if (true) { //if (this.checkForDead(property)
-        return "You lost :-(";
+      if (this.checkForDead(property)) {
+        console.log("reached if");
+        this.dead = true;
       }
     }, property.interval);
   }
@@ -32,7 +48,9 @@ Animal.prototype.needsSatisfied = function(decrementBoost) {
 }
 
 Animal.prototype.checkForDead = function(property) {
-  if (this.property.currentLevel > 100 || this.property.currentLevel < 0) {
+  console.log("reached");
+  console.log(property.currentLevel);
+  if (property.currentLevel > 100 || property.currentLevel < 0) {
     return true;
   } else {
     return false;
