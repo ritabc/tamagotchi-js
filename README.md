@@ -1,10 +1,10 @@
 # Project Title
 
-#### Epicodus JavaScript exercise, Date
+#### Epicodus JavaScript Tamagotchi, August 6th, 2018
 
-#### By Your Name Here
+#### By Renee Sarley, Rita Bennett-Chew
 
-## Description
+## A Tamagotchi application practicing asynchronous JavaScript functions and closures
 
 ## Setup on OSX
 
@@ -39,4 +39,4 @@
 
 This software is licensed under the MIT license.
 
-Copyright (c) 2018 **Your Name Here**
+Copyright (c) 2018 **Renee Sarley, Rita Bennett-Chew**
