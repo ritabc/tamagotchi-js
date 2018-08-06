@@ -1,7 +1,7 @@
 import { Animal } from './../src/animal.js';
 
 describe('Animal', function(){
-  let newAnimal = new Animal("Bob", "Pig", 0);
+  let newAnimal = new Animal("Bob", "Pig");
 
   beforeEach(function(){
     jasmine.clock().install();
