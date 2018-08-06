@@ -18,6 +18,9 @@ Animal.prototype.needsIncrease = function(incrementBoost) {
   return function(property){
     setInterval(() => {
       property.currentLevel += property.increment + incrementBoost;
+      if (true) { //if (this.checkForDead(property)
+        return "You lost :-(";
+      }
     }, property.interval);
   }
 }
@@ -25,5 +28,13 @@ Animal.prototype.needsIncrease = function(incrementBoost) {
 Animal.prototype.needsSatisfied = function(decrementBoost) {
   return function(property){
     property.currentLevel -= property.increment + decrementBoost;
+  }
+}
+
+Animal.prototype.checkForDead = function(property) {
+  if (this.property.currentLevel > 100 || this.property.currentLevel < 0) {
+    return true;
+  } else {
+    return false;
   }
 }

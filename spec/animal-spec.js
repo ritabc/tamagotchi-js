@@ -59,4 +59,9 @@ describe('Animal', function(){
     expect(newAnimal.hunger.currentLevel).toEqual(40);
   })
 
+  it('should check for dead after the animals hunger level goes above 100', function() {
+    newAnimal.hunger.currentLevel = 95;
+    expect(newAnimal.regularIncrease(newAnimal.hunger)).toEqual("You lost :-(");
+  })
+
 });
