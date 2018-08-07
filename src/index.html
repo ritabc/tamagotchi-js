@@ -5,9 +5,22 @@
 </head>
 <body>
   <div class="container">
-    <h1>Tamagotchi</h1>
+    <h1>Tamagotchi Farm</h1>
+    <div class="add-animal">
+      <form id="add-animal">
+        <label for="name">Enter the name of the animal you would like to create</label>
+        <input id="name" type="text">
+        <select id="type">
+          <option value="cute+pig+farm">Pig</option>
+          <option value="cute+cow+farm">Cow</option>
+          <option value="cute+chicken+farm">Chicken</option>
+          <option value="cute+happy+ostrich">Ostrich</option>
+        </select>
+        <button type="submit" id="add-button">Add Animal</button>
+      </form>
+    </div>
+    <div id="theFarm">
+    </div>
   </div>
-  <img id="test-image" atl="Image of this animal">
-  <button id="addNewAnimal" name="button">Go!</button>
 </body>
 </html>

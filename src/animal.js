@@ -1,8 +1,8 @@
 import { Characteristic } from './../src/characteristic.js';
 
-export function Animal(name, type){
+export function Animal(name){
   this.name = name;
-  this.type = type;
+  // this.type = type;
   this.hunger = new Characteristic('hunger', 50, 30000, 20)
   this.activity = new Characteristic('activity', 50, 45000, 25)
   this.sleepiness = new Characteristic('sleepiness', 50, 60000, 15)
