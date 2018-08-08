@@ -15,6 +15,7 @@
 * `npm run start` to build and start the dev server
 * `npm run lint` to explicitly run ESLint
 * `npm run test` to run the unit tests with Karma and Jasmine. Visit `localhost:9876` to view the tests.
+* Register for an API key at developers.giphy.com. Create a .env file and set API_KEY equal to that key within the file.
 
 ## Contribution Requirements
 
